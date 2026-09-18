@@ -1,0 +1,21 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Post {
+    id Int @id @default(autoincrement())
+    title String
+    content String?
+    published Boolean @default(false)
+    authorId Int?
+}
+
+model UploadFiles {
+    id Int @id @default(autoincrement())
+    type String 
+    name String?
+}
